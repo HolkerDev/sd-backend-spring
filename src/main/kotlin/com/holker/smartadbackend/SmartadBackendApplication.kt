@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class SmartadBackendApplication
 
 fun main(args: Array<String>) {
-	runApplication<SmartadBackendApplication>(*args)
+    runApplication<SmartadBackendApplication>(*args)
 }

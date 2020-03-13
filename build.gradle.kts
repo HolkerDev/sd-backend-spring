@@ -5,6 +5,7 @@ plugins {
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
     kotlin("jvm") version "1.3.61"
     kotlin("plugin.spring") version "1.3.61"
+    kotlin("plugin.jpa") version "1.3.61"
 }
 
 group = "com.holker"
@@ -16,11 +17,17 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.3.61")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    // To add postgresql connection
     implementation("org.postgresql:postgresql")
+    // To start a server
+    implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    // To fix kotlin problems
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    // To add request mapping
+    implementation("org.springframework:spring-web")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
